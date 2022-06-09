@@ -87,7 +87,7 @@ export default function Modal() {
                        	   {muted ? (
                               <VolumeOffIcon className="h-6 w-6" />
                        	   	) : (
-                              <VolumeUpIcon cla4="h-6 w-6" />
+                              <VolumeUpIcon className="h-6 w-6" />
                        	   	)}
                        </button>
 				</div>
