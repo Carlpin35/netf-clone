@@ -1,7 +1,8 @@
 import React from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import Thumbnail from './Thumbnail';
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react';
+import Movie from '../typings';
 
 interface Props {
 	title: string;
