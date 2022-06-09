@@ -3,8 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import useAuth from '../hooks/useAuth';
-
+import useAuth from "../hooks/useAuth";
 
 interface Inputs {
   email: string;
@@ -13,7 +12,7 @@ interface Inputs {
 
 export default function login() {
   const [login, setLogin] = useState(false);
-  const { signIn, signUp } = useAuth()
+  const { signIn, signUp } = useAuth();
 
   const {
     register,
@@ -21,13 +20,13 @@ export default function login() {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = async ({email, password}) => {
-         if (login) {
-            await signIn(email, password)
-         } else {
-           await signUp(email, password)
-         }
-  }
+  const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
+    if (login) {
+      await signIn(email, password);
+    } else {
+      await signUp(email, password);
+    }
+  };
 
   return (
     <div className="relative flex flex-col h-screen w-screen bg-black md:items-center md:justify-center md:bg-transparent">
@@ -66,7 +65,7 @@ export default function login() {
               className="input"
               {...register("email", { required: true })}
             />
-             {errors.email && (
+            {errors.email && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
                 Please enter a valid email.
               </p>
@@ -76,11 +75,10 @@ export default function login() {
             <input
               type="password"
               placeholder="Password"
-              name="password"
               className="input"
               {...register("password", { required: true })}
             />
-             {errors.password && (
+            {errors.password && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
                 Your password must contain between 4 and 60 characters.
               </p>
@@ -88,7 +86,10 @@ export default function login() {
           </label>
         </div>
 
-        <button className="w-full rounded bg-[#e50914] py-3 font-semibold" onClick={() => setLogin(true)}>
+        <button
+          className="w-full rounded bg-[#e50914] py-3 font-semibold"
+          onClick={() => setLogin(true)}
+        >
           Sign In
         </button>
 
