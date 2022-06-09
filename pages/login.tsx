@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import useAuth from '../hooks/useAuth';
 
 
